@@ -1,0 +1,60 @@
+{
+  "lighting": "vialrgb",
+  "name": "Charybdis 4x6 MK2 2HE",
+  "vendorId": "0xA9F8",
+  "productId": "0x1010",
+  "matrix": {"rows": 10,"cols": 6},
+  "customKeycodes": [
+	{"name": "IndSwitch",
+	 "title": "on/off layer indicator",
+	 "shortName": "INDSWITCH"
+	},
+	{"name": "DPI_UP",
+	 "title": "Increase trackball sensetivity",
+	 "shortName": "DPIUP"
+	},
+	{"name": "DPI_Down",
+	 "title": "Decrease trackball sensetivity",
+	 "shortName": "DPIDN"
+	},
+	{"name": "SNP_Up",
+	 "title": "Increase trackball sensetivity in sniper mode",
+	 "shortName": "SNPUP"
+	},
+	{"name": "SNP_Down",
+	 "title": "Decrease trackball sensetivity in sniper mode",
+	 "shortName": "SNPDN"
+	},
+	{"name": "DRAG_SCROLL",
+	 "title": "Enable trackball scroll mode",
+	 "shortName": "DRGSCRL"
+	},
+	{"name": "SCRL_UP",
+	 "title": "Increase scroll sensetivity",
+	 "shortName": "SCRLUP"
+	},
+	{"name": "SCRL_DN",
+	 "title": "Decrease scroll sensetivity",
+	 "shortName": "SCRLDN"
+	},
+	{"name": "SCRL_X",
+	 "title": "Invert scrolling on X axis",
+	 "shortName": "SCRLX"
+	},
+	{"name": "SCRL_Y",
+	 "title": "Invert scrolling on Y axis",
+	 "shortName": "SCRLY"
+	}
+],
+  "layouts": {
+    "keymap": [
+["0,0","0,1","0,2","0,3","0,4","0,5",{"x":5},"5,0","5,1","5,2","5,3","5,4","5,5"],
+["1,0","1,1","1,2","1,3","1,4","1,5",{"x":5},"6,0","6,1","6,2","6,3","6,4","6,5"],
+["2,0","2,1","2,2","2,3","2,4","2,5",{"x":5},"7,0","7,1","7,2","7,3","7,4","7,5"],
+["3,0","3,1","3,2","3,3","3,4","3,5",{"x":5},"8,0","8,1","8,2","8,3","8,4","8,5"],
+[{"y":0.25,"x":5},"4,0","4,1","4,2",{"x":1},"9,1","9,0"],
+[{"x":6},"4,4","4,3",{"x":1},"9,2"]
+
+]
+  }
+}

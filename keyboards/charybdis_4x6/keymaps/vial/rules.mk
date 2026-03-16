@@ -1,0 +1,8 @@
+VIA_ENABLE = yes
+VIAL_ENABLE = yes
+EXTRAKEY_ENABLE     = yes
+LTO_ENABLE = no
+TAP_DANCE_ENABLE = yes
+QMK_SETTINGS = yes
+COMBO_ENABLE        = yes
+VIALRGB_ENABLE = yes
