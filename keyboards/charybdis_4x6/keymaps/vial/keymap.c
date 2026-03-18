@@ -21,7 +21,8 @@ enum blender_keycode {
     B_SCRLUP,
     B_SCRLDN,
     B_SCRLX,
-    B_SCRLY
+    B_SCRLY,
+    B_RCLK_SCRL
 };
 
 typedef union {
@@ -84,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       XXXXXXX, KC_Z,         KC_X,         KC_C,         KC_V,         KC_B,        KC_N,    KC_M,         KC_COMM,      KC_DOT,       KC_SLSH,         KC_RBRC,
   // ╰───────────────────────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────────────────────────────╯
                                        LT(3, KC_ESC), LT(5, KC_SPC), LT(1, KC_TAB), LT(4, KC_ENT), LT(6, KC_BSPC),
-                                                      TD(0),         KC_BTN1,       KC_DEL
+                                                      B_RCLK_SCRL,   KC_BTN1,       KC_DEL
   //                                 ╰─────────────────────────────────────────────╯ ╰────────────────────────────────╯
   ),
 
@@ -320,6 +321,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    static uint16_t rmb_timer;
 	switch (keycode) {
 	case B_INDSWITCH:
             if (record->event.pressed) {
@@ -399,6 +401,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		eeconfig_update_user(user_config.raw);
             }
             return 0;
+    case B_RCLK_SCRL:
+        if (record->event.pressed) {
+            rmb_timer = timer_read();
+            set_scrolling = true;
+        } else {
+            set_scrolling = false;
+            if (timer_elapsed(rmb_timer) < TAPPING_TERM) {
+                tap_code16(KC_BTN2);
+            }
+        }
+        return 0;
 	}
 return 1;
 }
