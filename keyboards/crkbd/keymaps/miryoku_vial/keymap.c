@@ -32,6 +32,9 @@ enum layers {
 
 #define OSM_CS OSM(MOD_LCTL | MOD_LSFT)
 
+// Fires Alt+Shift, matching grp:alt_shift_toggle in your X11 config
+#define RU_TOGG LALT(KC_LSFT)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* BASE LAYER
@@ -72,9 +75,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* FUN LAYER */
   [_FUN] = LAYOUT_split_3x6_3(
-    TG(_DOTA_BASE), KC_F12, KC_F7, KC_F8, KC_F9, KC_PSCR,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TG(_DOTA_BASE),
-    XXXXXXX, KC_F11,  KC_F4,   KC_F5,   KC_F6,   KC_SCRL,    XXXXXXX, KC_RALT, KC_RGUI, KC_RCTL, KC_RSFT, XXXXXXX,
-    XXXXXXX, KC_F10,  KC_F1,   KC_F2,   KC_F3,   KC_PAUS,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    TG(_DOTA_BASE), KC_F1, KC_F2,  KC_F3,   KC_F4,   KC_PSCR,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TG(_DOTA_BASE),
+    XXXXXXX, KC_F5,   KC_F6,   KC_F7,   KC_F8,   RU_TOGG,       XXXXXXX, KC_RALT, KC_RGUI, KC_RCTL, KC_RSFT, XXXXXXX,
+    XXXXXXX, KC_F9,   KC_F10,  KC_F11,  KC_F12,  CW_TOGG,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                _______, _______, _______,    _______, _______, _______
   ),
 
