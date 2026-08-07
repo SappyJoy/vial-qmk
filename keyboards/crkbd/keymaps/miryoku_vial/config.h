@@ -37,6 +37,9 @@
  * adjustable at runtime from Vial's "QMK Settings" tab. */
 #define TAPPING_TERM 200
 
+#define SPLIT_LAYER_STATE_ENABLE
+#define OLED_TIMEOUT 60000
+
 /* IGNORE_MOD_TAP_INTERRUPT no longer exists in modern QMK. The closest
  * equivalents (Permissive Hold / Hold On Other Key Press) are toggles in
  * the Vial GUI, so leave them out of here and tune them live. */

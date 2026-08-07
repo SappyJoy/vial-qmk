@@ -15,4 +15,6 @@ LTO_ENABLE = no
 
 # --- Hardware -----------------------------------------------------------
 # Replaces the old keymap.json {"converter": "promicro_rp2040"}.
-CONVERT_TO = promicro_rp2040
+CONVERT_TO = sparkfun_pm2040
+
+OLED_ENABLE = yes

@@ -105,3 +105,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
   )
 };
+
+#ifdef OLED_ENABLE
+oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+    return OLED_ROTATION_270;   // vertical, standard for Corne
+}
+
+bool oled_task_user(void) {
+    if (is_keyboard_master()) {
+        oled_write_P(PSTR("LAYER\n\n"), false);
+        switch (get_highest_layer(layer_state)) {
+            case _BASE:      oled_write_P(PSTR("base "), false); break;
+            case _NAV:       oled_write_P(PSTR("nav  "), false); break;
+            case _NUM:       oled_write_P(PSTR("num  "), false); break;
+            case _SYM:       oled_write_P(PSTR("sym  "), false); break;
+            case _FUN:       oled_write_P(PSTR("fun  "), false); break;
+            case _DOTA_BASE: oled_write_P(PSTR("dota "), false); break;
+            case _DOTA_FUN:  oled_write_P(PSTR("dota+"), false); break;
+            default:         oled_write_P(PSTR("?????"), false); break;
+        }
+    } else {
+        oled_write_P(PSTR("corne\n"), false);
+    }
+    return false;
+}
+#endif
