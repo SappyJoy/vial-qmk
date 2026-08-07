@@ -1,3 +1,11 @@
+# TODO:
+
+Need to run the following:
+
+```sh
+sudo localectl set-x11-keymap "us,ru" "" "colemak_dh_ortho," "grp:alt_shift_toggle"
+```
+
 # Quantum Mechanical Keyboard Firmware
 
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
