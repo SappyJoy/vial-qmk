@@ -11,7 +11,7 @@
 /* Unlock combo = the two outer-column keys on the left half, rows 0 and 1
  * (matrix [0][0] and [1][0]). Both are XXXXXXX in your keymap, so holding
  * them types nothing. Vial reads the raw matrix, keycodes don't matter. */
-#define VIAL_UNLOCK_COMBO_ROWS { 0, 1 }
+#define VIAL_UNLOCK_COMBO_ROWS { 1, 2 }
 #define VIAL_UNLOCK_COMBO_COLS { 0, 0 }
 
 /* ------------------------------------------------------- dynamic keymap -- */
